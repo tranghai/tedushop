@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Adstract\Auditable.cs" />
     <Compile Include="Adstract\IAuditable.cs" />
+    <Compile Include="Model\Error.cs" />
     <Compile Include="Model\Footer.cs" />
     <Compile Include="Model\Menu.cs" />
     <Compile Include="Model\MenuGroup.cs" />
