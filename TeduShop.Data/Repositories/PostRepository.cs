@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using TeduShop.Data.Infrastructure;
 using TeduShop.Model.Models;
-using System.Linq;
 
 namespace TeduShop.Data.Repositories
 {
@@ -28,6 +26,9 @@ namespace TeduShop.Data.Repositories
 
             totalRow = query.Count();
 
+            // pageIndex = 1, pageSize = 20 => Skip((1-1)*20).Take(20) => Lấy từ vị trí 0 lấy 20 bảng ghi
+            // pageIndex = 2, pageSize = 20 => Skip(20).Take(20) => Lấy từ vị trí 20 lấy tiếp 20 bảng ghi
+            // pageIndex = 3, pageSize = 20 => Skip(40).Take(20) => Lấy từ vị trí 40 lấy tiếp 20 bảng ghi
             query = query.Skip((pageIndex - 1) * pageSize).Take(pageSize);
 
             return query;

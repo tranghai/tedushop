@@ -14,18 +14,15 @@ namespace TeduShop.Service
         IEnumerable<PostCategory> GetAllByParentId(int parentId);
         PostCategory GetById(int id);
     }
-
     public class PostCategoryService : IPostCategoryService
     {
         private IPostCategoryRepository _postCategoryRepository;
         private IUnitOfWork _unitOfWork;
-
         public PostCategoryService(IPostCategoryRepository postCategoryRepository, IUnitOfWork unitOfWork)
         {
             this._postCategoryRepository = postCategoryRepository;
             this._unitOfWork = unitOfWork;
         }
-
         public PostCategory Add(PostCategory postCategory)
         {
             return _postCategoryRepository.Add(postCategory);
@@ -33,7 +30,7 @@ namespace TeduShop.Service
 
         public PostCategory Delete(int id)
         {
-           return _postCategoryRepository.Delete(id);
+            return _postCategoryRepository.Delete(id);
         }
 
         public IEnumerable<PostCategory> GetAll()
